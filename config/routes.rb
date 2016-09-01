@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :teachers do
     get :subjects
   end
+  resources :visitors, only: [:index]
+  get 'subjects' => 'reports#subjects', as: 'report_subjects'
 end
