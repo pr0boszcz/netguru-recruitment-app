@@ -1,0 +1,7 @@
+= simple_form_for payment do |f|
+  = f.input :month
+  = f.input :year
+  = f.input :paid_at, as: :date
+  = f.association :students, label_method: :last_name, value_method: :id, label: 'Students', as: :list
+  = link_to t('shared.back'), payments_path, class: 'btn btn-default'
+  = f.button :submit

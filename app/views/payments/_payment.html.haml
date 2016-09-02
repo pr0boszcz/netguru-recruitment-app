@@ -1,0 +1,22 @@
+.title
+  = student.decorate.full_name
+%table.table.table-condensed
+  %thead
+    %tr
+      %th= t('payments.columns.year')
+      %th= t('payments.columns.month')
+      %th= t('payments.columns.paid_at')
+      %th= t('payments.columne.actions')
+  %tbody
+    - student.payments.each do |payment|
+      %tr
+        %td= payment.year
+        %td= payment.month
+        %td= payment.paid_at
+        %td
+          = link_to edit_payment_path(payment), { title: t('shared.edit') } do
+          %button.btn.btn-default
+            = fa_icon "edit"
+          = link_to payment_path(payment), { method: :delete, title: t('shared.delete') } do
+          %button.btn.btn-default
+            = fa_icon "delete"
