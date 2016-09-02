@@ -5,6 +5,9 @@ before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   - rm -f config/database.yml
   - cp -f config/database.yml.travis config/database.yml
+env:
+  - SECRET_KEY_BASE_TEST=97a5ae3010a645ef10fbbe44b29fa72162efcbcfa5dec0d8f40af2a4acf12b4b08a8373dae70e3991768d7c9b5f60deb45dc58e4507f5943a0a361992ba6c63b
+
 deploy:
   provider: heroku
   api_key:
