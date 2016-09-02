@@ -1,0 +1,3 @@
+test:
+  adapter: postgres
+  database: tracis_ci_test
