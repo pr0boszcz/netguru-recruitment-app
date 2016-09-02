@@ -1,3 +1,13 @@
 - breadcrumb :payments
 = link_to t('shared.add_new_item'), new_payment_path, class: 'btn btn-default'
-= render students
+%table
+  %thead
+    %tr
+      %th= t('students.columns.fullname')
+      %th= t('students.columns.payments')
+  %tbody
+    - students.each do |student|
+    %tr
+      %td= student.decorate.full_name
+      %td= render 'payment', student: student
+        
