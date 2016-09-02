@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+  - 2.2.3
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - rm -f config/database.yml
+  - cp -f config/database.yml.travis config/database.yml
+env:
+  - SECRET_KEY_BASE_TEST=97a5ae3010a645ef10fbbe44b29fa72162efcbcfa5dec0d8f40af2a4acf12b4b08a8373dae70e3991768d7c9b5f60deb45dc58e4507f5943a0a361992ba6c63b
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: lkFuNrOX8HqZpIBTauj/1FCCYMNjhgitAyJlu5OuiJicMDYr7L+k4WmSRCVLwOJhtT4q5xzrsUYOeEllaUoxyPtipr8gFj3Tb+FyZ/vlEvGDZFsLb7XLvv9gGh52idFhZff4z7hbAfagkwSZzv8hZ7Cpj1uCuUFj8i22bwqK9SiYU9N+2cEwrHx7IorVyY99kxkURtB1+rALuH7vP04zgElhoGyR95Gb5mf3BPRV1iOqfjyWaEogP8v2Ux+iJvzkOh1uZccLmwpv3RdVIbNmmhYQ6R5D6MJSLG/TZtUdcquWy7iqfwK/aKn+VYKe4quD6W8fmgg45JVc7jFEfVCbgewtyiIhsbJBbZRPLomRKErQSEUXnvTx2ejDH4vnfj+cNqlUMXVkWHR+XtPIE9qN9+T4VXmIKRbDTnINyP1EJYeKUnMQopva9691xHSFtWUtnfITKetgarJrY8fmaFXqcI36FDXjANowtiqcDCN9eiDATwK6PxtdBFJpctcbd6/tnj1znQiIr6kL7RxYBkSL4ZME0pGyfM9nYApZQyCia6GuJR8MSufXOdensktD9BQsj+4buZ943OUNzEqL4PLbdGk0iAKUs39HXKJvyO6Pc1JWPUXK2DEyfXRkm4mJji+hEbjEiqznwT9JdhKgeyd//b22wXRQ92GuXDVIXtBoORE=
+  on:
+    branch: develop
+    rvm: 2.2.3
+
+

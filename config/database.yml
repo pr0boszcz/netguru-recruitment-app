@@ -13,3 +13,12 @@ development:
 test: &test
   <<: *connection
   database: netguru_workshops_test
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  port: 5432
+  database: d4gdjgcr56281n
+  user: <%= ENV["POSTGRES_USER"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
+
