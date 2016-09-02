@@ -1,6 +1,10 @@
 language: ruby
 rvm:
   - 2.2.3
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - rm -f config/database.yml
+  - cp -f config/database.yml.travis config/database.yml
 deploy:
   provider: heroku
   api_key:
@@ -9,7 +13,4 @@ deploy:
     branch: develop
     rvm: 2.2.3
 
-  before_script:
-    - psql -c 'create database travis_ci_test;' -U postgres
-    - rm -f config/database.yml
-    - cp -f config/database.yml.travis config/database.yml
+
