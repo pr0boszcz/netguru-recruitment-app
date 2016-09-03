@@ -4,6 +4,7 @@ en:
     teachers: Teachers
     reports: Reports
     reports_subjects: Subjects
+    payments: Payments
     logout: Logout
     signin: Sign in
     signup: Sign up
@@ -18,7 +19,6 @@ en:
     show_subject_items: show subjects
     back: Back
     add_new_item: Add new one
-    subjects: subjects
   student:
     columns:
       full_name: name
@@ -35,5 +35,11 @@ en:
     columns:
       full_name: full name
       avg_notes: notes avarange
+    title: title
+  payments:
+    columns:
+      paid_at: paid at
+      paid_for: paid for
+    no-payments: There where no payments.
   date:
     month_names: [nil, "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
