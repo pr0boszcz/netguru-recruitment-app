@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     get :subjects
   end
 
-  resources :visitors, only: [:index]
+  resources :payments, except: :show
+  resources :visitors, only: :index
 
   get 'subjects' => 'reports#subjects', as: 'report_subjects'
 end
