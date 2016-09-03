@@ -10,6 +10,14 @@ class PaymentsController < ApplicationController
     end
   end
 
+  def update
+    if payment.save
+      redirect_to payments_path, notice: I18n.t('shared.updated', resource: 'Payment')
+    else
+      render :edit
+    end
+  end
+
   def destroy
     payment.destroy
     redirect_to payments_path, notice: I18n.t('shared.deleted', resource: 'Payment')
