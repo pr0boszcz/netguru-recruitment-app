@@ -33,3 +33,5 @@ en:
     columns:
       full_name: Full name
       avg_notes: Notes avarange
+  date:
+    month_names: [nil, "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
