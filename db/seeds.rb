@@ -46,4 +46,13 @@ SubjectItem.all.each do |subject_item|
   end
 end
 
+50.times do
+  Payment.create!(
+    year: (1990..2020).to_a.sample,
+    month: (1..12).to_a.sample,
+    paid_at: Date.today - (-100..200).to_a.sample.days,
+    student: students.sample
+  )
+end
+
 puts "Seeds: done"
