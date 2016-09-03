@@ -1,7 +1,8 @@
 = simple_form_for payment do |f|
-  = f.input :month
-  = f.input :year
+  = f.input :month, collection: (1..12).to_a.map{|i| [I18n.t("date.month_names")[i], i]}
+  = f.input :year, input_html: {value: Date.today.year}
   = f.input :paid_at, as: :date
-  = f.association :students, label_method: :last_name, value_method: :id, label: 'Students', as: :list
+  = f.association :student, label_method: lambda {|student| student.decorate.full_name}, value_method: :id, label: "Student", 
+    disabled: params["action"] == "edit" ? true : false
   = link_to t('shared.back'), payments_path, class: 'btn btn-default'
   = f.button :submit
