@@ -1,3 +1,17 @@
+Informations, links and the badge!
+================
+
+Howdy!
+
+Those are links for **TravisCI** and **Heroku**:
+* [TravisCI](https://travis-ci.org/pr0boszcz/netguru-recruitment-app)
+* [Heroku](https://netguru-recruitment-app.herokuapp.com/)
+
+And most important thing: [![Build Status](https://travis-ci.org/pr0boszcz/netguru-recruitment-app.svg?branch=master)](https://travis-ci.org/pr0boszcz/netguru-recruitment-app)
+
+
+-------------
+
 RoR Workshops
 ================
 
