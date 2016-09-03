@@ -1,10 +1,9 @@
 $(document).ready ->
 
   # DataTable
-  table = $('#payments-students').DataTable
+  table = $('#payments-table').DataTable
     "paging": false
     "info": false
-    #"searching": false
     "columns": 
       "data": "student_name"
       "data": "irrevelant"
@@ -12,12 +11,13 @@ $(document).ready ->
     # columns abilities
     "aoColumns":[
       {
-        "bSearchable": true       #Students names
+        "bSearchable": true       # Students names
         "bSortable": true
       },{
-        "bSearchable": false      #Payments
+        "bSearchable": false      # Payments
         "bSortable": false 
       }]
     "oLanguage":
       "sSearch": "Filter Students:"
+
 
