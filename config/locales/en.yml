@@ -21,9 +21,11 @@ en:
     subjects: subjects
   student:
     columns:
+      full_name: name
       first_name: first name
       last_name: last name
       birthdate: birth date
+      payments: payments
   teacher:
     columns:
       first_name: first name
@@ -31,7 +33,7 @@ en:
       academic_title: academic title
   subjects:
     columns:
-      full_name: Full name
-      avg_notes: Notes avarange
+      full_name: full name
+      avg_notes: notes avarange
   date:
     month_names: [nil, "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
