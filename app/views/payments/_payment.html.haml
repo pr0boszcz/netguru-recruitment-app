@@ -1,20 +1,20 @@
-%table.table.table-condensed
-  %thead
-    %tr
-      %th= t('payments.columns.year')
-      %th= t('payments.columns.month')
-      %th= t('payments.columns.paid_at')
-      %th= t('payments.columne.actions')
-  %tbody
-    - student.payments.each do |payment|
-      %tr
-        %td= payment.year
-        %td= payment.month
-        %td= payment.paid_at
-        %td
-          = link_to edit_payment_path(payment), { title: t('shared.edit') } do
-            %button.btn.btn-default
+- unless student.payments.empty?
+  .row
+    %strong.col-sm-4= t('payments.columns.paid_for')
+    %strong.col-sm-4= t('payments.columns.paid_at')
+    %strong.col-sm-4.text-right= t('shared.actions')
+  - student.payments.order(:year, :month).each do |payment|
+    .row
+      .col-sm-4= payment.decorate.payment_describe
+      .col-sm-4= payment.paid_at
+      .col-sm-4.text-right
+        = link_to edit_payment_path(payment), { title: t('shared.edit') } do
+          %button.btn.btn-default
             = fa_icon "edit"
-          = link_to payment_path(payment), { method: :delete, title: t('shared.delete') } do
-            %button.btn.btn-default
-            = fa_icon "delete"
+        = link_to payment_path(payment), { method: :delete, title: t('shared.delete') } do
+          %button.btn.btn-default
+            = fa_icon "trash"
+- else
+  .row
+    %strong.col-sm-12.text-center
+      .btn-warning= t('payments.no-payments')
